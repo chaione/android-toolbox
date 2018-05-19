@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 ext {
     bintrayRepo = 'maven'
@@ -46,6 +47,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:27.1.1'
+}
+
+def repo = new File(rootDir, "repository")
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = '0.1.1'
+            pom.groupId = 'com.moldedbits.android'
+            pom.artifactId = 'android-toolbox'
+        }
+    }
 }
 
 apply from: 'install.gradle'
