@@ -2,6 +2,6 @@
 <resources>
 
     <declare-styleable name="TintableImageView">
-        <attr name="tint" format="reference|color" />
+        <attr name="tb_tint" format="reference|color" />
     </declare-styleable>
 </resources>
