@@ -13,7 +13,7 @@ import com.moldedbits.android.toolbox.R;
  *
  * https://code.google.com/p/android/issues/detail?id=18220
  */
-public class TintableImageView extends ImageView {
+public class TintableImageView extends android.support.v7.widget.AppCompatImageView {
 
     private ColorStateList tint;
 
